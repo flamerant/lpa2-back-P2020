@@ -8,5 +8,6 @@ class Burger < ApplicationRecord
                 return nutri
             end
         end
+        return "Aucun"
     end
 end
