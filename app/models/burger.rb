@@ -5,7 +5,7 @@ class Burger < ApplicationRecord
             product = Openfoodfacts::Product.get(self.code, locale: 'fr')
             if(!self.product.nil?)
                 nutri = product.nutriments.to_hash
-                return nutri
+                return nutri[0]
             end
         end
         return "Aucun"
