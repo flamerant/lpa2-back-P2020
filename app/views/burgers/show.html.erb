@@ -35,10 +35,12 @@
 
   <tbody>
     <% @burger.nutriments.each do |nutriment| %>
-      <tr>
-        <td><%= nutriment[0] %></td>
-        <td><%= nutriment[1] %></td>
-      </tr>
+      <% !nutriment[0].include? "unit" %>
+        <tr>
+          <td><%= nutriment[0].gsub('_', ' ').gsub('-', ' ') %></td>
+          <td><%= nutriment[1] %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
